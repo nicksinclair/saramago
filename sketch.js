@@ -18,7 +18,7 @@ let saveButton;
 // THEMES
 let dynamicTheme = [];
 
-let PALETTE = ['red', 'blue', 'black', 'white'];
+let PALETTE = ["red", "blue", "black", "white"];
 
 // LAYOUT
 let MARGIN = BLOCK_SIZE * 0.05;
@@ -43,7 +43,7 @@ function setup() {
   // UI DOM ELEMENTS
   // parent UI element
   const ui = createDiv().class("control-panel");
-  
+
   // labels
   const primaryLabel = createDiv("PRIMARY COLOR").class("label").parent(ui);
   const secondaryLabel = createDiv("SECONDARY COLOR").class("label").parent(ui);
@@ -54,43 +54,43 @@ function setup() {
 
   const rowLabel = createDiv("ROWS").class("label").parent(ui);
   const colLabel = createDiv("COLUMNS").class("label").parent(ui);
-  
+
   // color pickers
-  primaryColorPicker = createColorPicker('red')
+  primaryColorPicker = createColorPicker("red")
     .class("color-picker")
     .parent(primaryLabel);
-  secondaryColorPicker = createColorPicker('blue')
+  secondaryColorPicker = createColorPicker("blue")
     .class("color-picker")
     .parent(secondaryLabel);
-  tertiaryColorPicker = createColorPicker('black')
+  tertiaryColorPicker = createColorPicker("black")
     .class("color-picker")
     .parent(tertiaryLabel);
-  backgroundColorPicker = createColorPicker('white')
+  backgroundColorPicker = createColorPicker("white")
     .class("color-picker")
     .parent(backgroundLabel);
-  
+
   // sliders
   rowSlider = createSlider(2, maxRows, 10, 1).class("slider").parent(rowLabel);
   colSlider = createSlider(2, maxCols, 10, 1).class("slider").parent(colLabel);
-  
+
   saveButton = createButton("SAVE SVG").parent(ui);
   saveButton.mousePressed(saveSVG);
 
   createCanvas(totalX, totalY, SVG);
-  
+
   // MODES
   rectMode(CENTER);
   angleMode(DEGREES);
-  
+
   calculatePalette();
 
   // BLOCKS
   generateBlocks();
-} 
+}
 
 function draw() {
   background(255);
-  
+
   // LAYOUT
   calculateLayout();
 

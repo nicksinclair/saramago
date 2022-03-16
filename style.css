@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 
 :root {
-  --primary: #FF0000;
-  --secondary: #0000FF;
+  --primary: #ff0000;
+  --secondary: #0000ff;
   --tertiary: #000000;
-  --background: #FFFFFF;
+  --background: #ffffff;
 }
 
 html,
@@ -23,7 +23,7 @@ body {
 #defaultCanvas0 {
   padding-left: 0;
   padding-right: 0;
-/*   margin-left: auto;
+  /*   margin-left: auto;
   margin-right: auto; */
   display: block;
 }

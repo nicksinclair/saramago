@@ -1,44 +1,44 @@
 const layerConstructors = [
   {
-    name: 'Bar',
+    name: "Bar",
     init: () => new Bar(),
     weight: 1,
   },
   {
-    name: 'Right Triangle',
+    name: "Right Triangle",
     init: () => new RightTriangle(),
     weight: 2,
   },
   {
-    name: 'Double Triangle',
+    name: "Double Triangle",
     init: () => new DoubleTriangle(),
     weight: 3,
   },
   {
-    name: 'Diamond',
+    name: "Diamond",
     init: () => new Diamond(),
     weight: 3,
   },
   {
-    name: 'Circle',
+    name: "Circle",
     init: () => new Circle(),
     weight: 4,
   },
   {
-    name: 'Square',
+    name: "Square",
     init: () => new Square(),
     weight: 5,
   },
   {
-    name: 'Leaf',
+    name: "Leaf",
     init: () => new Leaf(),
     weight: 6,
   },
   {
-    name: 'Eyeball',
+    name: "Eyeball",
     init: () => new Eyeball(),
     weight: 6,
-  }
+  },
 ];
 
 // Finds a point on a circle of a given radius
@@ -68,7 +68,7 @@ function doubleTriangle(posX, posY, length) {
   const b = createVector(posX - length / 2, posY + length / 2);
   const c = createVector(posX - length / 2, posY - length / 2);
   const d = createVector(posX + length / 2, posY - length / 2);
-  
+
   vertex(a.x, a.y);
   vertex(c.x, c.y);
   vertex(b.x, b.y);
@@ -83,7 +83,7 @@ function diamond(posX, posY, length) {
   const b = createVector(posX - length / 4, posY + length / 4);
   const c = createVector(posX - length / 2, posY - length / 2);
   const d = createVector(posX + length / 4, posY - length / 4);
-  
+
   vertex(a.x, a.y);
   vertex(b.x, b.y);
   vertex(c.x, c.y);
@@ -98,7 +98,7 @@ function diamond(posX, posY, length) {
 //   const b = createVector();
 //   const c = createVector();
 //   const d = createVector();
-  
+
 //   curveVertex();
 //   endShape();
 // }
