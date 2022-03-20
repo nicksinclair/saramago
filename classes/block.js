@@ -26,6 +26,9 @@ class Block {
 
   update() {
     this.blockSize = BLOCK_SIZE;
-    // this.color = PALETTE[this.paletteIndex];
+
+    this.layers.forEach((layer) => {
+      layer.update();
+    });
   }
 }

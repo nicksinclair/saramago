@@ -2,7 +2,12 @@ class Layer {
   constructor() {
     this.shapeSize = BLOCK_SIZE;
     this.position = 0;
-    this.layerColor = getRandomFromPalette();
+    this.paletteIndex = floor(random(0, PALETTE.length));
+    this.color = PALETTE[this.paletteIndex];
+  }
+
+  update() {
+    this.color = PALETTE[this.paletteIndex];
   }
 }
 
@@ -14,7 +19,7 @@ class Background extends Layer {
   render() {
     // console.log("Rendering Background");
 
-    fill(this.layerColor);
+    fill(this.color);
 
     push();
     rect(this.position, 0, this.shapeSize);
@@ -26,13 +31,13 @@ class Bar extends Layer {
   constructor() {
     super();
     this.orientation = randomSelectTwo();
-    this.layerColor = getRandomFromPalette(2);
+    this.color = getRandomFromPalette(2);
   }
 
   render() {
     // console.log("Rendering Bar");
 
-    fill(this.layerColor);
+    fill(this.color);
 
     push();
     if (this.orientation) {
@@ -52,7 +57,7 @@ class RightTriangle extends Layer {
   render() {
     // console.log("Rendering Right Triangle");
 
-    fill(this.layerColor);
+    fill(this.color);
 
     push();
     applyRotation();
@@ -64,13 +69,13 @@ class RightTriangle extends Layer {
 class DoubleTriangle extends Layer {
   constructor() {
     super();
-    this.layerColor = getRandomFromPalette(2);
+    this.color = getRandomFromPalette(2);
   }
 
   render() {
     // console.log("Rendering Double Triangle");
 
-    fill(this.layerColor);
+    fill(this.color);
 
     push();
     doubleTriangle(this.position, 0, this.shapeSize);
@@ -81,13 +86,13 @@ class DoubleTriangle extends Layer {
 class Diamond extends Layer {
   constructor() {
     super();
-    this.layerColor = PALETTE[2];
+    this.color = PALETTE[2];
   }
 
   render() {
     // console.log("Rendering Diamond");
 
-    fill(this.layerColor);
+    fill(this.color);
 
     push();
     applyRotation();
@@ -100,13 +105,13 @@ class Circle extends Layer {
   constructor() {
     super();
     this.shapeSize = BLOCK_SIZE * 0.7;
-    this.layerColor = PALETTE[2];
+    this.color = PALETTE[2];
   }
 
   render() {
     // console.log("Rendering Circle");
 
-    fill(this.layerColor);
+    fill(this.color);
 
     push();
     ellipse(this.position, 0, this.shapeSize);
@@ -123,7 +128,7 @@ class Square extends Layer {
   render() {
     // console.log("Rendering Square");
 
-    fill(this.layerColor);
+    fill(this.color);
 
     push();
     rotate(45);
@@ -146,13 +151,13 @@ class Eyeball extends Layer {
   constructor() {
     super();
     this.shapeSize = BLOCK_SIZE * 0.5;
-    this.layerColor = randomSelectTwo() ? PALETTE[3] : PALETTE[2];
+    this.color = randomSelectTwo() ? PALETTE[3] : PALETTE[2];
   }
 
   render() {
     // console.log("Rendering Eyeball");
 
-    fill(this.layerColor);
+    fill(this.color);
 
     push();
     ellipse(this.position, 0, this.shapeSize);

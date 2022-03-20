@@ -8,6 +8,7 @@ let prev_cols = COLS;
 // UI DOM ELEMENTS
 let primaryColorPicker;
 let secondaryColorPicker;
+let tertiaryColorPicker;
 let backgroundColorPicker;
 
 let rowSlider;
@@ -17,8 +18,12 @@ let saveButton;
 
 // THEMES
 let dynamicTheme = [];
-
-let PALETTE = ["red", "blue", "black", "white"];
+let PALETTE = [
+  // color(0, 100, 100),
+  // color(240, 100, 100),
+  // color(0, 0, 0),
+  // color(0, 0, 100),
+];
 
 // LAYOUT
 let MARGIN = BLOCK_SIZE * 0.05;
@@ -56,16 +61,16 @@ function setup() {
   const colLabel = createDiv("COLUMNS").class("label").parent(ui);
 
   // color pickers
-  primaryColorPicker = createColorPicker("red")
+  primaryColorPicker = createColorPicker(color(0, 100, 100))
     .class("color-picker")
     .parent(primaryLabel);
-  secondaryColorPicker = createColorPicker("blue")
+  secondaryColorPicker = createColorPicker(color(240, 100, 100))
     .class("color-picker")
     .parent(secondaryLabel);
-  tertiaryColorPicker = createColorPicker("black")
+  tertiaryColorPicker = createColorPicker(color(0, 0, 0))
     .class("color-picker")
     .parent(tertiaryLabel);
-  backgroundColorPicker = createColorPicker("white")
+  backgroundColorPicker = createColorPicker(color(0, 0, 100))
     .class("color-picker")
     .parent(backgroundLabel);
 
@@ -89,14 +94,13 @@ function setup() {
 }
 
 function draw() {
-  background(255);
-
   // LAYOUT
   calculateLayout();
 
   // COLOR
-  // calculatePalette();
+  calculatePalette();
 
+  background(PALETTE[PALETTE.length - 1]);
   noFill();
   noStroke();
 
