@@ -32,21 +32,14 @@ const layerConstructors = [
   {
     name: "Leaf",
     init: () => new Leaf(),
-    weight: 6,
+    weight: 10,
   },
   {
     name: "Eyeball",
     init: () => new Eyeball(),
-    weight: 6,
+    weight: 10,
   },
 ];
-
-// Finds a point on a circle of a given radius
-// function pointOnCircle(posX, posY, radius, angle) {
-//   const x = posX + radius * cos(angle);
-//   const y = posY + radius * sin(angle);
-//   return createVector(x, y);
-// }
 
 // Draws a right triangle
 function rightTriangle(posX, posY, length) {
@@ -121,20 +114,8 @@ function getRandomFromPalette(length = PALETTE.length) {
   return PALETTE[rand];
 }
 
-// Applies a random rotation
-function applyRotation() {
-  const angle = floor(random(4));
-  rotate(angle * 90);
-}
-
-// Handles logic for selecting shape to render
-function renderShape(shape, shapeSize, transform) {
-  if (shape === 0) {
-    rect(0, 0, shapeSize);
-  } else if (shape === 1) {
-    ellipse(0, 0, shapeSize);
-  } else if (shape === 2) {
-    rotate(transform * 90);
-    rightTriangle(0, 0, shapeSize);
-  }
-}
+// // Applies a random rotation
+// function applyRotation() {
+//   const angle = floor(random(4));
+//   rotate(angle * 90);
+// }

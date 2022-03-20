@@ -9,7 +9,6 @@ class Block {
     this.layers.push(new Background());
 
     layerConstructors.forEach((lcon) => {
-      // console.log(this.picker);
       if (this.picker == lcon.weight) {
         this.layers.push(lcon.init());
       }

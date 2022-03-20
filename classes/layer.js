@@ -6,6 +6,10 @@ class Layer {
     this.color = PALETTE[this.paletteIndex];
   }
 
+  render() {
+    fill(this.color);
+  }
+
   update() {
     this.color = PALETTE[this.paletteIndex];
   }
@@ -17,8 +21,6 @@ class Background extends Layer {
   }
 
   render() {
-    // console.log("Rendering Background");
-
     fill(this.color);
 
     push();
@@ -35,8 +37,6 @@ class Bar extends Layer {
   }
 
   render() {
-    // console.log("Rendering Bar");
-
     fill(this.color);
 
     push();
@@ -52,15 +52,14 @@ class Bar extends Layer {
 class RightTriangle extends Layer {
   constructor() {
     super();
+    this.transform = floor(random(2));
   }
 
   render() {
-    // console.log("Rendering Right Triangle");
-
     fill(this.color);
 
     push();
-    applyRotation();
+    rotate(this.transform * 90);
     rightTriangle(this.position, 0, this.shapeSize);
     pop();
   }
@@ -73,8 +72,6 @@ class DoubleTriangle extends Layer {
   }
 
   render() {
-    // console.log("Rendering Double Triangle");
-
     fill(this.color);
 
     push();
@@ -87,15 +84,14 @@ class Diamond extends Layer {
   constructor() {
     super();
     this.color = PALETTE[2];
+    this.transform = floor(random(2));
   }
 
   render() {
-    // console.log("Rendering Diamond");
-
     fill(this.color);
 
     push();
-    applyRotation();
+    rotate(this.transform * 90);
     diamond(this.position, 0, this.shapeSize);
     pop();
   }
@@ -109,8 +105,6 @@ class Circle extends Layer {
   }
 
   render() {
-    // console.log("Rendering Circle");
-
     fill(this.color);
 
     push();
@@ -126,8 +120,6 @@ class Square extends Layer {
   }
 
   render() {
-    // console.log("Rendering Square");
-
     fill(this.color);
 
     push();
@@ -143,7 +135,7 @@ class Leaf extends Layer {
   }
 
   render() {
-    // console.log("Rendering Leaf");
+    // TODO
   }
 }
 
@@ -155,8 +147,6 @@ class Eyeball extends Layer {
   }
 
   render() {
-    // console.log("Rendering Eyeball");
-
     fill(this.color);
 
     push();
