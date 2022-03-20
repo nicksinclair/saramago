@@ -15,6 +15,7 @@ let rowSlider;
 let colSlider;
 
 let saveButton;
+let generateButton;
 
 // THEMES
 let dynamicTheme = [];
@@ -48,6 +49,9 @@ function setup() {
   // UI DOM ELEMENTS
   // parent UI element
   const ui = createDiv().class("control-panel");
+
+  regenerateButton = createButton("REGENERATE").parent(ui);
+  regenerateButton.mousePressed(generateBlocks);
 
   // labels
   const primaryLabel = createDiv("PRIMARY COLOR").class("label").parent(ui);
@@ -118,12 +122,14 @@ function draw() {
   // console.log(frameRate());
 
   // comment/uncomment to toggle interactivity
-  noLoop();
+  // noLoop();
 }
 
 function generateBlocks() {
+  // clear blocks array
   blocks.splice(0, blocks.length);
 
+  // generate a new block at each position in the grid
   for (let x = 0; x < COLS; x++) {
     for (let y = 0; y < ROWS; y++) {
       const posX = START + x * GRIDBOX;
