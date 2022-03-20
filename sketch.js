@@ -155,8 +155,8 @@ function calculateLayout() {
   prev_rows = ROWS;
   prev_cols = COLS;
 
-  MARGIN = BLOCK_SIZE * 4;
-  PADDING = BLOCK_SIZE * 0.2;
+  MARGIN = BLOCK_SIZE * 0.05;
+  PADDING = BLOCK_SIZE * 0.05;
 
   GRIDBOX = BLOCK_SIZE + PADDING;
   START = BLOCK_SIZE + MARGIN;
